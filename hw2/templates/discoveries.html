@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Discover</th>
+            <th>Year</th>
+        </tr>
+        {% for disc in discoveries %}
+            <tr>
+                {% if disc.year >= 1800 %}
+                <td style="color: red">{{ disc.discover }}</td>
+                {% else %}
+                <td>{{ disc.discover }}</td>
+                {% endif %}
+                <td>{{ disc.year }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

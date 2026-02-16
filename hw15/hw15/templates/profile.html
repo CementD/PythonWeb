@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <button onclick="sayHi()">Click</button>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'profile.js' %}"></script>
+{% endblock %}

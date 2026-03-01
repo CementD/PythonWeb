@@ -4,6 +4,8 @@ from db.session import Base
 
 class Role(Base):
     __tablename__ = "roles"
+
     id = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String, unique=True)
+
     users = relationship("User", back_populates="role")

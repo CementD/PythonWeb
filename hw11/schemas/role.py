@@ -1,7 +1,7 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 class RoleCreate(BaseModel):
-    name: str = Field(min_length=1, max_length=50)
+    name: str
 
 class RoleRead(RoleCreate):
     id: int

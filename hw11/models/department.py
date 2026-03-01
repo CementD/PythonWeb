@@ -3,8 +3,10 @@ from sqlalchemy.orm import relationship
 from db.session import Base
 
 class Department(Base):
-    __tablename__ = 'departments'
+    __tablename__ = "departments"
+
     id = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String, unique=True)
     description = Column(String)
+
     events = relationship("Event", back_populates="department")

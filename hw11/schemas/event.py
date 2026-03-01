@@ -1,18 +1,14 @@
-from typing import List
-
-from pydantic import BaseModel, Field
-
-from schemas.user import UserRead
-
+from pydantic import BaseModel
+from datetime import datetime
 
 class EventCreate(BaseModel):
-    name: str = Field(min_length=3, max_length=50)
-    description: str = Field(min_length=3, max_length=200)
-    department: str = Field(min_length=3, max_length=50)
+    title: str
+    description: str
+    date: datetime
+    department_id: int
 
 class EventRead(EventCreate):
     id: int
-    users: List[UserRead]
 
     class Config:
         from_attributes = True
